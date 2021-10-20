@@ -26,33 +26,48 @@ public class Rational {
     // (When you write the simplify method later on, you should
     // also call it in this method to return the simplified result)
     public static Rational add(Rational r, Rational s) {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int newnumerator = (r.numerator * s.denominator) + (r.numerator * r.denominator);
+        int newdenominator = r.denominator * s.denominator;
+        Rational rad = new Rational(newnumerator, newdenominator);
+        return rad;
     }
 
     // This method takes two Rationals, subtracts thems up, 
     // and returns a Rational equal to the difference
     public static Rational subtract(Rational r, Rational s) {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int newnumerator = (r.numerator * s.denominator) - (r.numerator * r.denominator);
+        int newdenominator = r.denominator * s.denominator;
+        Rational rad = new Rational(newnumerator, newdenominator);
+        return rad;
     }
     
     public static Rational multiply(Rational r, Rational s) {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int newnumerator = r.numerator * s.numerator;
+        int newdenominator = r.denominator * s.denominator;
+        Rational rad = new Rational(newnumerator, newdenominator);
+        return rad;
     }
     
     public static Rational divide(Rational r, Rational s) {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int newnumerator = r.numerator * s.denominator;
+        int newdenominator = r.denominator * s.numerator;
+        Rational rad = new Rational(newnumerator, newdenominator);
+        return rad;
     }
 
     // Finds the greatest common factor between a and b
     // To find the greatest common factor, find the largest number x
     // such that a and b are both multiples of x
     public static int greatestCommonFactor(int a, int b){
-        // REPLACE WITH YOUR CODE HERE
-        return 1;
+        int y = Math.max(a,b);
+        int z = 0;
+        for (int i = y; i > 0; i--){
+            if (b % i == 0 && a % i == 0){
+                z = i;
+                break;
+            }
+        }
+        return z;
     }
 
     // This method is given a rational, and returns a simplified version
