@@ -29,30 +29,34 @@ public class Rational {
         int newnumerator = (r.numerator * s.denominator) + (r.numerator * r.denominator);
         int newdenominator = r.denominator * s.denominator;
         Rational rad = new Rational(newnumerator, newdenominator);
-        return rad;
+        Rational Juan = simplify(rad);
+        return Juan;
     }
 
     // This method takes two Rationals, subtracts thems up, 
     // and returns a Rational equal to the difference
     public static Rational subtract(Rational r, Rational s) {
-        int newnumerator = (r.numerator * s.denominator) - (r.numerator * r.denominator);
+        int newnumerator = (r.numerator * s.denominator) - (s.numerator * r.denominator);
         int newdenominator = r.denominator * s.denominator;
         Rational rad = new Rational(newnumerator, newdenominator);
-        return rad;
+        Rational Juan = simplify(rad);
+        return Juan;
     }
     
     public static Rational multiply(Rational r, Rational s) {
         int newnumerator = r.numerator * s.numerator;
         int newdenominator = r.denominator * s.denominator;
         Rational rad = new Rational(newnumerator, newdenominator);
-        return rad;
+        Rational Juan = simplify(rad);
+        return Juan;
     }
     
     public static Rational divide(Rational r, Rational s) {
         int newnumerator = r.numerator * s.denominator;
         int newdenominator = r.denominator * s.numerator;
         Rational rad = new Rational(newnumerator, newdenominator);
-        return rad;
+        Rational Juan = simplify(rad);
+        return Juan;
     }
 
     // Finds the greatest common factor between a and b
@@ -76,8 +80,11 @@ public class Rational {
     // e.g. simplify(2/4) => 1/2
     //      simplify(1/2) => 1/2
     public static Rational simplify(Rational r) {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int beeboop = greatestCommonFactor(r.numerator, r.denominator);
+        int sloppy = r.numerator / beeboop;
+        int wacky = r.denominator / beeboop;
+        Rational zippy = new Rational(sloppy,wacky);
+        return zippy;
     }
 
     // This following method is NOT static, we'll talk about it next class!
